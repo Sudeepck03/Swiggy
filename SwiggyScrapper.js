@@ -7,6 +7,9 @@ app.get('/', (req, res) => {
   res.send("Swiggy Restuarnt Webscrapping WebSite")
 })
 
+app.get('/dish',(req,res)=>{
+    console.log("it is an /dish route"); 
+})
 
 app.get('/dishes',(req,res)=>{
     try {
