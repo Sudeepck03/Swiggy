@@ -23,7 +23,7 @@ app.get('/dishes',(req,res)=>{
         // removw await here for deployment
             const resturantData =  getRestuarntData(city, restaurants, maximum, minimum, q);
             
-            mailer(email, resturantData)
+            mailer(email,JSON.stringify(resturantData))
             res.send(`The Message Will be Sent to ${email}`)
   } catch (err) {
     console.log("Error" + err);
