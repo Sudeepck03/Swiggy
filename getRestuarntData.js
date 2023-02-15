@@ -5,7 +5,7 @@ const {getRestuarntsLinks} = require('./getRestuarntsLinks')
 
 async function getRestuarntData(city, restaurants, maximum = 150, minimum = 100, q) {
   const allLinks = await getRestuarntsLinks(city, restaurants);
-
+  console.log(allLinks)
   // make it true for deployment
   const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
   let page = await browser.newPage()
