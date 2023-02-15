@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 async function getRestuarntsLinks(city,restaurants)  {
       // make it true for deployment
-    const browser = await puppeteer.launch({headless: true, args: ["--no-sandbox"]});
+    const browser = await puppeteer.launch({headless: false, args: ["--no-sandbox"]});
     let page = await browser.newPage();
      page.setDefaultNavigationTimeout(0);
      let filteredRestuarnt = []
