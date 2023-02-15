@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/dish',(req,res)=>{
-    console.log("it is an /dish route"); 
+    res.send("it is an /dish route"); 
 })
 
 app.get('/dishes',(req,res)=>{
