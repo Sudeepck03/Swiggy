@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+console.log("hello")
 
 const mailer = (email,resturantsAndDishes) => {
   try {
