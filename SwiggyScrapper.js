@@ -1,15 +1,12 @@
 const express = require('express')
 const app = express();
 const { getRestuarntData} = require('./getRestuarntData')
-const {mailer} = require('./mailer')
+
 
 app.get('/', (req, res) => {
   res.send("Swiggy Restuarnt Webscrapping WebSite")
 })
 
-app.get('/dish',(req,res)=>{
-    res.send("it is an /dish route"); 
-})
 
 app.get('/dishes',(req,res)=>{
     try {
@@ -19,11 +16,9 @@ app.get('/dishes',(req,res)=>{
             maximum = Number(maximum)
             minimum = Number(minimum)
         }
-      console.log(`${email}`)
         // removw await here for deployment
-            const resturantData =  getRestuarntData(city, restaurants, maximum, minimum, q);
+            const resturantData =  getRestuarntData(city, restaurants, maximum, minimum, q,email);
             
-            mailer(email,JSON.stringify(resturantData))
             res.send(`The Message Will be Sent to ${email}`)
   } catch (err) {
     console.log("Error" + err);
