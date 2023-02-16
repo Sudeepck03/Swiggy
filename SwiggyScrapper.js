@@ -13,13 +13,10 @@ app.get('/dishes',(req,res)=>{
     try {
             let { city, restaurants, email, maximum, minimum, q } = req.query
           console.log("email : " +  email);
-        if (!isNaN(maximum) && !isNaN(minimum)) {
-            maximum = Number(maximum)
-            minimum = Number(minimum)
-        }
+        
       console.log("dishes");
         // removw await here for deployment
-            const resturantData =  getRestuarntData(city, restaurants, maximum, minimum, q,email);
+         getRestuarntData(city, restaurants, maximum, minimum, q,email);
             
             res.send(`The Message Will be Sent to ${email}`)
   } catch (err) {
