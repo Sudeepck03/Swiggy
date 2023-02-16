@@ -4,6 +4,7 @@ const { getRestuarntData} = require('./getRestuarntData')
 
 
 app.get('/', (req, res) => {
+  console.log("/ is the Route");
   res.send("Swiggy Restuarnt Webscrapping WebSite")
 })
 
@@ -11,7 +12,7 @@ app.get('/', (req, res) => {
 app.get('/dishes',(req,res)=>{
     try {
             let { city, restaurants, email, maximum, minimum, q } = req.query
-
+          console.log("email : " +  email);
         if (!isNaN(maximum) && !isNaN(minimum)) {
             maximum = Number(maximum)
             minimum = Number(minimum)
