@@ -17,7 +17,7 @@ async function getRestuarntData(city, restaurants, maximum = 150, minimum = 100,
       break;
     }
     i++;
-    restuarntsAndDishes += await getDataOfEachRestuarnt(link, page, allLinks.filteredRestuarnt, maximum, minimum, q,restuarntsAndDishes)
+    restuarntsAndDishes += await getDataOfEachRestuarnt(link, page, allLinks.filteredRestuarnt, maximum, minimum, q)
   }
   
    await browser.close()
