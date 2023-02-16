@@ -16,7 +16,7 @@ app.get('/dishes',(req,res)=>{
             maximum = Number(maximum)
             minimum = Number(minimum)
         }
-      cobsole.log("dishes");
+      console.log("dishes");
         // removw await here for deployment
             const resturantData =  getRestuarntData(city, restaurants, maximum, minimum, q,email);
             
