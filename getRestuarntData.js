@@ -23,7 +23,6 @@ async function getRestuarntData(city, restaurants, maximum = 150, minimum = 100,
    await browser.close()
    
    mailer(email, restuarntsAndDishes)
-   return  restuarntsAndDishes;
 }
 
 module.exports = {getRestuarntData}
