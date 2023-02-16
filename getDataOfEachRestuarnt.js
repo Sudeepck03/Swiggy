@@ -1,6 +1,7 @@
-let counter = 0;
+
 
 async function getDataOfEachRestuarnt(url, page, filteredRestuarnt, maximum, minimum, q,restuarntsAndDishes) {
+   let counter = 0;
    let currentrestuarntsAndDishes = "";
   let maximumpriceLimit = parseInt(maximum);
   let minimumPriceLimt = parseInt(minimum);
@@ -44,14 +45,15 @@ async function getDataOfEachRestuarnt(url, page, filteredRestuarnt, maximum, min
     if (isNaN(dishPriceAfterDiscount)) {
       dishes.push({ dishName, dishPrice })
       if (dishPrice >= minimumPriceLimt && dishPrice <= maximumpriceLimit) {
-        counter++;
         if (typeof (limitDiscount) === 'number' && dishPriceAfterDiscount >= limitDiscount) {
             // console.log(q + " " + lowerCaseDishName .includes(q)+ " " + lowerCaseDishName)
           if (q && lowerCaseDishName.includes(q)){
+             counter++;
             currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice} -${percentage}%  "${q}" `
 //             console.log( typeof(restuarntsAndDishes )  +" "  + typeof(`<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage}% "${q}" ${maximum} ${minimum}`))
           }
           else if (!q){
+             counter++;
             currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice} -${percentage}%  "${q}" `
 //             console.log( typeof(restuarntsAndDishes )  +" "  + typeof(`<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice} -${percentage}%  "${q}" ${maximum} ${minimum}`))
           }
@@ -60,10 +62,12 @@ async function getDataOfEachRestuarnt(url, page, filteredRestuarnt, maximum, min
         else if (typeof (limitDiscount) === "string") {
             // console.log(q + " " + lowerCaseDishName .includes(q)+ " " + lowerCaseDishName)
           if (q && lowerCaseDishName.includes(q)){
+             counter++;
             currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage}% "${q}" `
 //             console.log( typeof(restuarntsAndDishes )  +" "  + typeof(`<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage}% "${q}" ${maximum} ${minimum}`))
           }
           else if (!q){
+             counter++;
             currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage} " ${q} " `
 //             console.log( typeof(restuarntsAndDishes )  +" "  + typeof(`<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage} " ${q} " ${maximum} ${minimum}`))
           }
@@ -73,14 +77,15 @@ async function getDataOfEachRestuarnt(url, page, filteredRestuarnt, maximum, min
     else {
       dishes.push({ dishName, dishPrice: dishPriceAfterDiscount });
       if (dishPriceAfterDiscount >= minimumPriceLimt && dishPriceAfterDiscount <= maximumpriceLimit) {
-        counter++;
         if (typeof (limitDiscount) === 'number' && dishPriceAfterDiscount >= limitDiscount) {
             // console.log(q + " " + lowerCaseDishName .includes(q) + " " + lowerCaseDishName )
           if (q && lowerCaseDishName.includes(q)){
+             counter++;
             currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}"`
 //             console.log( typeof(restuarntsAndDishes )  +" "  + typeof(`<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}" ${maximum} ${minimum}`))
           }
           else if (!q){
+             counter++;
             currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}"`    
 //             console.log( typeof(restuarntsAndDishes )  +" "  + typeof(`<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}" ${maximum} ${minimum}`))
           }
@@ -88,10 +93,12 @@ async function getDataOfEachRestuarnt(url, page, filteredRestuarnt, maximum, min
         else if (typeof (limitDiscount) === "string") {
             // console.log(q + " " + lowerCaseDishName .includes(q)+ " " + lowerCaseDishName)
           if (q && lowerCaseDishName.includes(q)){
+             counter++;
             currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}"`
 //               console.log( typeof(restuarntsAndDishes )  +" "  + typeof(`<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}" ${maximum} ${minimum}`))
           }
           else if (!q){
+             counter++;
             currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}"`
 //              console.log(typeof(restuarntsAndDishes )  + " " + typeof(`<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}" ${maximum} ${minimum}`))
           }
