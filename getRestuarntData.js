@@ -13,7 +13,7 @@ async function getRestuarntData(city, restaurants, maximum = 150, minimum = 100,
   let i=0;
 
   for (let link of allLinks.links) {
-    if(i<6){
+    if(i>6){
       break;
     }
     i++;
