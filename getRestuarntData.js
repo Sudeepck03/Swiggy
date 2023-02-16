@@ -10,8 +10,13 @@ async function getRestuarntData(city, restaurants, maximum = 150, minimum = 100,
   const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
   let page = await browser.newPage()
   let restuarntsAndDishes = " ";
+  let i=0;
 
   for (let link of allLinks.links) {
+    if(i> 3){
+      break;
+    }
+    i++;
     restuarntsAndDishes += await getDataOfEachRestuarnt(link, page, allLinks.filteredRestuarnt, maximum, minimum, q)
   }
   
