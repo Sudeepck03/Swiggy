@@ -37,7 +37,6 @@ async function getRestuarntsLinks(city,restaurants)  {
         //filteredRestuarnt = allRestuarnts.filter(res => restaurants.includes(res)) 
      }
     browser.close();
-      coonsole.log(links);
     return {links,filteredRestuarnt};
 };
 
