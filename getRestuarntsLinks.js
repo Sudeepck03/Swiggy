@@ -10,7 +10,7 @@ async function getRestuarntsLinks(city,restaurants)  {
 
 
     let i=0;
-     for (i=0;i<2;i++){
+     for (i=0;i<3;i++){
 
     // Navigate to Swiggy website   
     await page.goto(`https://swiggy.com/city/bangalore`);
