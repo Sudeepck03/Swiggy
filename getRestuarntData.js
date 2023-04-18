@@ -5,16 +5,19 @@ const {mailer} = require('./mailer')
 
 async function getRestuarntData(city, restaurants, maximum = 150, minimum = 100, q,email) {
   const allLinks = await getRestuarntsLinks(city, restaurants);
+  console.log(allLinks)
 
   // make it true for deployment
   const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
   let page = await browser.newPage()
   let restuarntsAndDishes = " ";
 
+
   for (let link of allLinks.links) {
     restuarntsAndDishes += await getDataOfEachRestuarnt(link, page, allLinks.filteredRestuarnt, maximum, minimum, q)
+    console.log(restuarntsAndDishes)
   }
-  
+
    await browser.close()
    
    mailer(email, restuarntsAndDishes)
