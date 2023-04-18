@@ -15,14 +15,14 @@ async function getRestuarntsLinks(city, restaurants) {
   if (city) await page.goto(`https://swiggy.com/city/${city}`);
   else await page.goto(`https://www.swiggy.com/city/bangalore`);
 
-  //while (i < 10) {
-    //await page.$eval(
-      //".RestaurantList__ShowMoreContainer-sc-1d3nl43-0.ikntVJ > div > div:nth-child(1)",
-      //(el) => el.click()
-    //);
-    //await new Promise((r) => setTimeout(r, 2000));
-    //i++;
-  //}
+  while (i < 10) {
+    await page.$eval(
+      ".RestaurantList__ShowMoreContainer-sc-1d3nl43-0.ikntVJ > div > div:nth-child(1)",
+      (el) => el.click()
+    );
+    await new Promise((r) => setTimeout(r, 2000));
+    i++;
+  }
 
   links = await page.$$eval(".sc-iBdmCd.hPntbc > div > a", (allLinks) =>
     allLinks.map((a) => a.href)
