@@ -12,8 +12,8 @@ async function getRestuarntsLinks(city, restaurants) {
   let i = 0;
 
   page.setDefaultNavigationTimeout(0);
-  if (city) await page.goto(`https://swiggy.com/city/${city}`);
-  else await page.goto(`https://www.swiggy.com/city/bangalore`);
+
+   await page.goto(`https://www.swiggy.com/city/bangalore`);
 
   while (i < 4) {
     await page.$eval(
