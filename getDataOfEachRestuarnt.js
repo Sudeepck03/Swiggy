@@ -84,7 +84,7 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
     ) {
       return { [hotelName]: { dishes: filteredDishes } };
     }
-
+    console.log("Before the loop")
     for (const dishElement of dishElements) {
       console.log("currentrestuarntsAndDishes" + " " + currentrestuarntsAndDishes.length)
       const dishName = await dishElement.$eval(
