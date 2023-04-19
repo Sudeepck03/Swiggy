@@ -86,6 +86,7 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
     }
 
     for (const dishElement of dishElements) {
+      console.log("currentrestuarntsAndDishes" + " " + currentrestuarntsAndDishes.length)
       const dishName = await dishElement.$eval(
         "h3",
         (node) => node.textContent
@@ -159,7 +160,7 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
         }
       }
     }
-    console.log("currentrestuarntsAndDishes" + " " + currentrestuarntsAndDishes.length)
+    
   } catch (err) {
     console.log(err);
   }
