@@ -95,16 +95,6 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
         discount < limit ? dishPrice - discount : dishPrice - limit;
       const lowerCaseDishName = dishName.toLowerCase();
 
-     // console.log(
-       // dishName +
-         // " " +
-          //dishPrice +
-          //" " +
-          //discount +
-          //" " +
-          //dishPriceAfterDiscount
-      //);
-
       if (isNaN(dishPriceAfterDiscount)) {
         dishes.push({ dishName, dishPrice });
         if (dishPrice >= minimumPriceLimt && dishPrice <= maximumpriceLimit) {
@@ -115,29 +105,21 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
             if (q && lowerCaseDishName.includes(q)) {
               counter++;
               currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice} -${percentage}%  "${q}" `;
-              console.log(
-                `${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage}% "${q}" ${maximum} ${minimum} \n`
-              );
+         
             } else if (!q) {
               counter++;
               currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice} -${percentage}% `;
-              console.log(
-                `${counter} . ${hotelName} : ${dishName}  ₹${dishPrice} -${percentage}% ${maximum} ${minimum} \n`
-              );
+              
             }
           } else if (typeof limitDiscount === "string") {
             if (q && lowerCaseDishName.includes(q)) {
               counter++;
               currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage}% ${q} `;
-              console.log(
-                `${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage}% "${q}" ${maximum} ${minimum} \n`
-              );
+              
             } else if (!q) {
               counter++;
               currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage} " `;
-              console.log(
-                `${counter} . ${hotelName} : ${dishName}  ₹${dishPrice}  -${percentage}  ${maximum} ${minimum} \n`
-              );
+             
             }
           }
         }
@@ -154,35 +136,27 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
             if (q && lowerCaseDishName.includes(q)) {
               counter++;
               currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% ${q}`;
-              console.log(
-                `${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}" ${maximum} ${minimum} \n`
-              );
+             
             } else if (!q) {
               counter++;
               currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% ${q}`;
-              console.log(
-                `${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}" ${maximum} ${minimum} \n`
-              );
+              
             }
           } else if (typeof limitDiscount === "string") {
             if (q && lowerCaseDishName.includes(q)) {
               counter++;
               currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% ${q}`;
-              console.log(
-                `${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}" ${maximum} ${minimum} \n`
-              );
+              
             } else if (!q) {
               counter++;
               currentrestuarntsAndDishes += `<br/> ${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% ${q}`;
-              console.log(
-                `${counter} . ${hotelName} : ${dishName} ₹${dishPriceAfterDiscount} -${percentage}% "${q}" ${maximum} ${minimum} \n`
-              );
+             
             }
           }
         }
       }
     }
-    console.log(currentrestuarntsAndDishes + " " + currentrestuarntsAndDishes.length)
+    console.log("currentrestuarntsAndDishes" + " " + currentrestuarntsAndDishes.length)
   } catch (err) {
     console.log(err);
   }
