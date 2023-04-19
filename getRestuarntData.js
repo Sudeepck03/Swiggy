@@ -14,8 +14,13 @@ async function getRestuarntData(city, restaurants, maximum = 150, minimum = 100,
 
 
   for (let link of allLinks.links) {
-    restuarntsAndDishes += await getDataOfEachRestuarnt(link, page, allLinks.filteredRestuarnt, maximum, minimum, q)
+    try{
+      restuarntsAndDishes += await getDataOfEachRestuarnt(link, page, allLinks.filteredRestuarnt, maximum, minimum, q)
     console.log(restuarntsAndDishes)
+    } catch(err){
+      console.log("inside getRestuarntData.js" + err);
+    }
+    
   }
 
    await browser.close()
