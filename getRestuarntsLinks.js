@@ -15,7 +15,7 @@ async function getRestuarntsLinks(city, restaurants) {
 
    await page.goto(`https://www.swiggy.com/city/bangalore`);
 
-  while (i <= 1) {
+  while (i < 1) {
     await page.$eval(
       ".RestaurantList__ShowMoreContainer-sc-1d3nl43-0.ikntVJ > div > div:nth-child(1)",
       (el) => el.click()
