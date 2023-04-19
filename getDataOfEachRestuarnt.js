@@ -98,7 +98,9 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
       let dishPriceAfterDiscount =
         discount < limit ? dishPrice - discount : dishPrice - limit;
       const lowerCaseDishName = dishName.toLowerCase();
-
+      
+      console.log(dishName + " " + dis
+ 
       if (isNaN(dishPriceAfterDiscount)) {
         dishes.push({ dishName, dishPrice });
         if (dishPrice >= minimumPriceLimt && dishPrice <= maximumpriceLimit) {
