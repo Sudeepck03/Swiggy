@@ -31,8 +31,7 @@ async function getRestuarntsLinks(city, restaurants) {
     ".sc-iBdmCd.hPntbc > div .sc-dmyDGi.dpnlFb",
     (res) => res.map((data) => data.innerText)
   );
-  console.log(allRestuarnts);
-  console.log(links);
+ 
 
   if (restaurants && restaurants.length > 0) {
     filteredRestuarnt = allRestuarnts.filter((res) =>
