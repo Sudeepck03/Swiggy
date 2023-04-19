@@ -8,7 +8,7 @@ async function getRestuarntData(city, restaurants, maximum = 150, minimum = 100,
   console.log(allLinks)
 
   // make it true for deployment
-  const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
+  const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox", "--disable-dev-shm-usage"] });
   let page = await browser.newPage()
   let restuarntsAndDishes = " ";
 
