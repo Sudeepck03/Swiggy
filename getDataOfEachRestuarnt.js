@@ -73,7 +73,7 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
     let filteredDishes = [];
     let limitDiscount = "";
 
-    if (limit[0] === '"ABOVE"') {
+    if (limit[0] === 'ABOVE') {
       limitDiscount = Number(limit[limit.length - 1].substring(1));
     }
 
