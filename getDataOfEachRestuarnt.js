@@ -8,6 +8,7 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
     
     await page.setDefaultNavigationTimeout(0)
     await page.goto(url)
+    console.log(url)
     await page.waitForNavigation()
     await page.waitForSelector('[data-testid="normal-dish-item"]');
 
