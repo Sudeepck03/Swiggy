@@ -95,15 +95,15 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
         discount < limit ? dishPrice - discount : dishPrice - limit;
       const lowerCaseDishName = dishName.toLowerCase();
 
-      console.log(
-        dishName +
-          " " +
-          dishPrice +
-          " " +
-          discount +
-          " " +
-          dishPriceAfterDiscount
-      );
+     // console.log(
+       // dishName +
+         // " " +
+          //dishPrice +
+          //" " +
+          //discount +
+          //" " +
+          //dishPriceAfterDiscount
+      //);
 
       if (isNaN(dishPriceAfterDiscount)) {
         dishes.push({ dishName, dishPrice });
