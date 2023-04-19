@@ -5,8 +5,10 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
   let maximumpriceLimit = parseInt(maximum);
   let minimumPriceLimt = parseInt(minimum);
   try {
-    await page.setDefaultNavigationTimeout(0);
-    await page.goto(url);
+    
+    await page.setDefaultNavigationTimeout(0)
+    await page.goto(url)
+    await page.waitForNavigation()
     await page.waitForSelector('[data-testid="normal-dish-item"]');
 
     // Extract dish data
