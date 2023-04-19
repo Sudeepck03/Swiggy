@@ -99,7 +99,7 @@ async function getDataOfEachRestuarnt(url,page,filteredRestuarnt,maximum,minimum
         discount < limit ? dishPrice - discount : dishPrice - limit;
       const lowerCaseDishName = dishName.toLowerCase();
       
-      console.log(dishName + " " + dis
+      console.log(dishName + " " + dishPrice)
  
       if (isNaN(dishPriceAfterDiscount)) {
         dishes.push({ dishName, dishPrice });
